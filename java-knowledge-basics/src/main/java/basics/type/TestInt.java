@@ -9,7 +9,7 @@ import junit.framework.TestCase;
 public class TestInt extends TestCase {
     public void testMaxValue(){
         int maxInt = Integer.MAX_VALUE;
-        System.out.printf("int max_value = %d \n", maxInt);
+        System.out.printf("maxInt = %d, about 2billion \n", maxInt);
     }
 
     public void testOverflow(){
