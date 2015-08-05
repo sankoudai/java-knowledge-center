@@ -8,6 +8,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <name>java-knowledge-center</name>
     <modules>
         <module>java-knowledge-parent</module>
         <module>java-knowledge-basics</module>
