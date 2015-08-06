@@ -12,5 +12,6 @@
     <modules>
         <module>java-knowledge-parent</module>
         <module>java-knowledge-basics</module>
+        <module>java-knowledge-api</module>
     </modules>
 </project>
