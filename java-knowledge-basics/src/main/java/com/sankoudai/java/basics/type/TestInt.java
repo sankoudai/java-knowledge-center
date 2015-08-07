@@ -1,4 +1,4 @@
-package basics.type;
+package com.sankoudai.java.basics.type;
 
 import junit.framework.TestCase;
 
