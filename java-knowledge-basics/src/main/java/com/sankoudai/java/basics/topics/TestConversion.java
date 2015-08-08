@@ -1,4 +1,4 @@
-package com.sankoudai.java.basics.other;
+package com.sankoudai.java.basics.topics;
 
 import junit.framework.TestCase;
 import org.junit.Assert;

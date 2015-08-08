@@ -1,5 +1,6 @@
 package com.sankoudai.java.basics.structure;
 
+import org.junit.Assert;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -25,15 +26,29 @@ public class TestLoop extends TestCase{
     }
 
     public void testForeach(){
+        /* array */
         String[] strings = {"one", "two", "three"};
         for (String i : strings){
             System.out.printf("foreach - item = %s  \n", i);
         }
+        System.out.println();
 
+        /* collection */
         Collection<String> collection = new ArrayList<String>();
         Collections.addAll(collection, strings);
         for (String item : collection){
             System.out.printf("foreach - item = %s  \n", item);
         }
+        System.out.println();
+
+        /* null */
+        collection = null;
+        try{
+            for (String item : collection){}
+            Assert.assertTrue(false);
+        }catch (NullPointerException e){
+            System.out.println("You should be here");
+        }
+        System.out.println();
     }
 }
