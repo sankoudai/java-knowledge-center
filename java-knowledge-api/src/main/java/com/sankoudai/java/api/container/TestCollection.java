@@ -58,6 +58,28 @@ public class TestCollection extends TestCase{
         System.out.printf("col = %s \n", col.toString());
     }
 
+    public void testRemove(){
+        Collection<Integer> col = new ArrayList<>();
+        col.add(0);
+        col.add(1);
+
+        boolean removed = col.remove(1);
+        Assert.assertTrue(removed);
+        System.out.printf("col = %s \n", col.toString());
+
+        removed = col.remove(2);
+        Assert.assertTrue(!removed);
+    }
+
+    public void testClear(){
+        Collection<Integer> col = new ArrayList<>();
+        col.add(0);
+        col.add(1);
+
+        col.clear();
+        Assert.assertTrue(col.isEmpty());
+    }
+
     public void testForeach(){
         Collection<Integer> col = new ArrayList<>();
         col.add(0);
@@ -132,5 +154,3 @@ public class TestCollection extends TestCase{
         }
     }
 }
-
-
