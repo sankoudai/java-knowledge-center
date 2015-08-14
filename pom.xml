@@ -14,5 +14,6 @@
         <module>java-knowledge-basics</module>
         <module>java-knowledge-api</module>
         <module>java-knowledge-knowledge</module>
+        <module>java-knowledge-apix</module>
     </modules>
 </project>
