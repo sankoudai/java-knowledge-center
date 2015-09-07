@@ -9,15 +9,17 @@ import java.util.Arrays;
  * @author : sankoudai
  * @version : created at 2015/8/8
  */
-public class TestArrays extends TestCase{
-    public void testFill(){
+public class TestArrays extends TestCase {
+    public void testFill() {
         int[] ints = new int[5];
         Arrays.fill(ints, 1);
         System.out.printf("ints=%s \n", Arrays.toString(ints));
     }
 
-    /** Arrays.copyOf(arr, newLength): expand arr to size of newLength*/
-    public void testCopyOf(){
+    /**
+     * Arrays.copyOf(arr, newLength): expand arr to size of newLength
+     */
+    public void testCopyOf() {
         int[] ints = {0, 1};
 
         int newLength = 3;

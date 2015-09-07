@@ -11,14 +11,14 @@ import java.util.Arrays;
  * @version : created at 2015/8/6
  */
 public class TestStringReader extends TestCase {
-    public void testBuild(){
+    public void testBuild() {
         StringReader reader = new StringReader("String Content");
     }
 
     public void testReadOne() throws IOException {
         StringReader reader = new StringReader("0123456");
         int ch = reader.read();
-        System.out.printf("intValue=%d, charValue=%c", ch, (char)ch);
+        System.out.printf("intValue=%d, charValue=%c", ch, (char) ch);
     }
 
     public void testReadMany() throws IOException {

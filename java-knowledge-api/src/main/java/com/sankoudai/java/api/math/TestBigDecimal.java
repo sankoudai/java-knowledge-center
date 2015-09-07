@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  * @version : created at 2015/8/11
  */
 public class TestBigDecimal extends TestCase {
-    public void testBuild(){
+    public void testBuild() {
         BigDecimal bd = new BigDecimal(3.1234);
         System.out.printf("testBuild: bigdecimal from double = %s \n", bd.toString());
 
@@ -18,30 +18,26 @@ public class TestBigDecimal extends TestCase {
         System.out.println();
     }
 
-    public void testRound(){
+    public void testRound() {
         BigDecimal bigDecimal = new BigDecimal("3.856");
         //四舍五入取整
-        System.out.println("testRound--round half up: (3.856)="
-                + bigDecimal.setScale(0, BigDecimal.ROUND_HALF_UP));
+        System.out.println("testRound--round half up: (3.856)=" + bigDecimal.setScale(0, BigDecimal.ROUND_HALF_UP));
 
         // 四舍五入保留两位小数
-        System.out.println("testRound--round half up: (3.856)="
-                + bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP));
+        System.out.println("testRound--round half up: (3.856)=" + bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP));
 
 
         //负数
         bigDecimal = new BigDecimal("-3.856");
         //四舍五入取整
-        System.out.println("testRound--round half up: (-3.856)="
-                + bigDecimal.setScale(0, BigDecimal.ROUND_HALF_UP));
+        System.out.println("testRound--round half up: (-3.856)=" + bigDecimal.setScale(0, BigDecimal.ROUND_HALF_UP));
 
         // 四舍五入保留两位小数
-        System.out.println("testRound--round half up: (-3.856)="
-                + bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP));
+        System.out.println("testRound--round half up: (-3.856)=" + bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP));
         System.out.println();
     }
 
-    public void testAccuracy(){
+    public void testAccuracy() {
         double val = Double.parseDouble("3.1234");
         BigDecimal bigDecimal = new BigDecimal("3.1234");
 

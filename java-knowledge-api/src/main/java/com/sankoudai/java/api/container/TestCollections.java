@@ -8,11 +8,11 @@ import java.util.*;
  * @author : sankoudai
  * @version : created at 2015/8/11
  */
-public class TestCollections extends TestCase{
+public class TestCollections extends TestCase {
     /* collection related */
 
     /*-- list related --*/
-    public void testSwap(){
+    public void testSwap() {
         List<Integer> list = new ArrayList<>();
         Collections.addAll(list, 0, 1, 2);
 
@@ -21,7 +21,7 @@ public class TestCollections extends TestCase{
         System.out.printf("testSwap: after swap list = %s \n", list);
     }
 
-    public void testSort(){
+    public void testSort() {
         /* Compare by natural order : for comparable */
         List<Integer> list = new ArrayList<>();
         Collections.addAll(list, 0, 2, 1);
@@ -46,7 +46,7 @@ public class TestCollections extends TestCase{
         System.out.println();
     }
 
-    public void testShuffle(){
+    public void testShuffle() {
         List<Integer> list = new ArrayList<>();
         Collections.addAll(list, 0, 1, 2, 3, 4);
 
@@ -56,8 +56,10 @@ public class TestCollections extends TestCase{
         System.out.println();
     }
 
-    /** thread safe wrapper by imposing synchronized access */
-    public void testSynchronizedCollection(){
+    /**
+     * thread safe wrapper by imposing synchronized access
+     */
+    public void testSynchronizedCollection() {
         Collection<Object> col = new ArrayList<>();
         col = Collections.synchronizedCollection(col);
 

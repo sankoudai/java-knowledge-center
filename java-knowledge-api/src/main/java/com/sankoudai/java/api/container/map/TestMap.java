@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class TestMap extends TestCase {
 
-    public void testHashCode(){
+    public void testHashCode() {
         String s1 = new String("ABC");
         String s2 = new String("ABC");
         String s3 = new String("Tom");
@@ -32,7 +32,7 @@ public class TestMap extends TestCase {
         System.out.println(s5.hashCode());
     }
 
-    public void testEqualOfKey(){
+    public void testEqualOfKey() {
         Map<Object, Object> map = new HashMap<>();
         map.put(new Date(0L), "a");
         map.put(new Date(0L), "b");
@@ -41,11 +41,22 @@ public class TestMap extends TestCase {
         Assert.assertEquals(map.get(new Date(0L)), "b");
     }
 
-    public void testEmptyKeySet(){
+    public void testEmptyKeySet() {
         Map<Object, Object> map = new HashMap<>();
         Set<Object> keys = map.keySet();
 
         Assert.assertTrue(keys != null);
         Assert.assertTrue(keys.isEmpty());
+    }
+
+    public void testPutAll(){
+        Map<Object, Object> map = new HashMap<>();
+
+        Map<Object, Object> anotherMap = new HashMap<>();
+        anotherMap.put("name", "jim");
+        anotherMap.put("age", 30);
+
+        map.putAll(anotherMap);
+        System.out.printf("testPutAll: map = %s", map.toString());
     }
 }

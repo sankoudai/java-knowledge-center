@@ -11,16 +11,17 @@ import java.util.Iterator;
  * @author : sankoudai
  * @version : created at 2015/8/8
  */
-public class TestCollection extends TestCase{
-    public void testSize(){
+public class TestCollection extends TestCase {
+    public void testSize() {
         Collection<Integer> col = new ArrayList<>();
         Assert.assertEquals(0, col.size());
     }
 
-    /** collection contains obj
+    /**
+     * collection contains obj
      * if and only if there exists an element of collection item such that item==obj or item.equals(obj)
      */
-    public void testContains(){
+    public void testContains() {
         Collection<Object> col = new ArrayList<>();
 
         /* simple object */
@@ -33,7 +34,7 @@ public class TestCollection extends TestCase{
 
         /* user-defined object with default equals */
         Object obj = new ObjectWithDefaultEquals(),
-                alikeObj = new ObjectWithDefaultEquals();
+                        alikeObj = new ObjectWithDefaultEquals();
         col.add(obj);
         Assert.assertTrue(col.contains(obj));
         Assert.assertTrue(!col.contains(alikeObj));
@@ -47,18 +48,18 @@ public class TestCollection extends TestCase{
         Assert.assertTrue(!col.contains(notAlikeObj));
     }
 
-    public void testIsEmpty(){
+    public void testIsEmpty() {
         Collection<Integer> col = new ArrayList<>();
         Assert.assertTrue(col.isEmpty());
     }
 
-    public void testAdd(){
+    public void testAdd() {
         Collection<Integer> col = new ArrayList<>();
         col.add(1);
         System.out.printf("col = %s \n", col.toString());
     }
 
-    public void testRemove(){
+    public void testRemove() {
         Collection<Integer> col = new ArrayList<>();
         col.add(0);
         col.add(1);
@@ -71,7 +72,7 @@ public class TestCollection extends TestCase{
         Assert.assertTrue(!removed);
     }
 
-    public void testClear(){
+    public void testClear() {
         Collection<Integer> col = new ArrayList<>();
         col.add(0);
         col.add(1);
@@ -80,25 +81,25 @@ public class TestCollection extends TestCase{
         Assert.assertTrue(col.isEmpty());
     }
 
-    public void testForeach(){
+    public void testForeach() {
         Collection<Integer> col = new ArrayList<>();
         col.add(0);
         col.add(1);
 
-        for(Integer i: col){
+        for (Integer i : col) {
             System.out.printf("i=%d \n", i);
         }
     }
 
-    public void testIteratorPattern(){
+    public void testIteratorPattern() {
         Collection<Integer> col = new ArrayList<>();
         col.add(0);
         col.add(1);
 
         Iterator<Integer> iterator = col.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Integer item = iterator.next();
-            if(item == 1){
+            if (item == 1) {
                 iterator.remove(); // remove current item from array
             }
         }
@@ -106,10 +107,11 @@ public class TestCollection extends TestCase{
         System.out.printf("col = %s \n", col); //[0]
     }
 
-    /** What collection holds are references to object.
-     *  When referenced object changes, it's seen in collection.
+    /**
+     * What collection holds are references to object.
+     * When referenced object changes, it's seen in collection.
      */
-    public void testChangeableItem(){
+    public void testChangeableItem() {
         Collection<Object> col = new ArrayList<>();
 
         ArrayList<Integer> changeableItem = new ArrayList<>();
@@ -120,8 +122,8 @@ public class TestCollection extends TestCase{
         System.out.printf("Afterm item changes: col = %s \n", col);
     }
 
-    
-    public void testToArray(){
+
+    public void testToArray() {
         Collection<Integer> col = new ArrayList<>();
         col.add(0);
         col.add(1);
@@ -133,24 +135,28 @@ public class TestCollection extends TestCase{
         Integer[] integers = col.toArray(new Integer[0]);
     }
 
-    private class ObjectWithDefaultEquals{
+    private class ObjectWithDefaultEquals {
 
     }
 
-    private class ObjectWithDefinedEquals{
+
+    private class ObjectWithDefinedEquals {
         private Integer id;
-        public ObjectWithDefinedEquals(Integer id){
+
+        public ObjectWithDefinedEquals(Integer id) {
             this.id = id;
         }
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o)
+                return true;
+            if (o == null || getClass() != o.getClass())
+                return false;
 
             ObjectWithDefinedEquals that = (ObjectWithDefinedEquals) o;
 
-            return (id == that.id) || (id!=null && id.equals(that.id));
+            return (id == that.id) || (id != null && id.equals(that.id));
         }
     }
 }

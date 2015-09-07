@@ -16,7 +16,7 @@ import java.util.Properties;
  * @version : created at 2015/8/11
  */
 public class TestProperties extends TestCase {
-    public void testLoad() throws Exception{
+    public void testLoad() throws Exception {
         Properties properties = new Properties();
 
         InputStream in = getClass().getResourceAsStream("/test.properties");
@@ -24,19 +24,19 @@ public class TestProperties extends TestCase {
         System.out.printf("properties = %s \n", properties);
     }
 
-    public void testSetProperties(){
+    public void testSetProperties() {
         Properties properties = new Properties();
         properties.setProperty("name", "jim");
     }
 
-    public void testGetProperties(){
+    public void testGetProperties() {
         Properties properties = getTestProperties();
         String key = "name";
         String val = properties.getProperty(key);
         System.out.printf("testGetProperties: key = %s, val = %s", key, val);
     }
 
-    private Properties getTestProperties(){
+    private Properties getTestProperties() {
         Properties properties = new Properties();
 
         InputStream in = getClass().getResourceAsStream("/test.properties");

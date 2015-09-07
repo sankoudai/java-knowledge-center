@@ -21,4 +21,5 @@ public class TestWrapper extends TestCase {
         Integer i = Integer.parseInt("1f", 16);
         System.out.printf("testHex: 1f = %d", i);
     }
+
 }

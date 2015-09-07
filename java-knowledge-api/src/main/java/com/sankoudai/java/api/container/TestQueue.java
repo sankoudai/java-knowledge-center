@@ -10,7 +10,7 @@ import java.util.Queue;
  * @version : created at 2015/8/11
  */
 public class TestQueue extends TestCase {
-    public void test(){
+    public void test() {
         Queue<String> que = new LinkedList<String>();
     }
 }

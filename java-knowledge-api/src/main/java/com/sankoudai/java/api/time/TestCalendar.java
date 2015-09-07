@@ -11,8 +11,8 @@ import java.util.GregorianCalendar;
  * @author : sankoudai
  * @version : created at 2015/8/13
  */
-public class TestCalendar extends TestCase{
-    public void testBuild(){
+public class TestCalendar extends TestCase {
+    public void testBuild() {
         /*default to now*/
         Calendar calendar = Calendar.getInstance();
         /*default to now*/
@@ -25,10 +25,10 @@ public class TestCalendar extends TestCase{
         calendar = new GregorianCalendar(year, month, day);
     }
 
-    public void testFields(){
+    public void testFields() {
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
-        int month =  cal.get(Calendar.MONTH)+1; //月份从0开始, 其余正常
+        int month = cal.get(Calendar.MONTH) + 1; //月份从0开始, 其余正常
         int dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
         int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
         int dayOfYear = cal.get(Calendar.DAY_OF_YEAR);
@@ -42,7 +42,7 @@ public class TestCalendar extends TestCase{
         System.out.printf("testComponents: hourOfDay=%s \n", hourOfDay);
     }
 
-    public void testConversionWithDate(){
+    public void testConversionWithDate() {
         /* to date */
         Calendar cal = Calendar.getInstance();
         Date date = cal.getTime();
@@ -58,11 +58,11 @@ public class TestCalendar extends TestCase{
     }
 
     // TODO: summarize
-    public void testYearProperties(){
+    public void testYearProperties() {
         Calendar cal = Calendar.getInstance();
     }
 
-    public void testMonthProperties(){
+    public void testMonthProperties() {
         Calendar cal = new GregorianCalendar(2015, Calendar.FEBRUARY, 1);
         int actualMaximum = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
         int maximum = cal.getMaximum(Calendar.DAY_OF_MONTH);
@@ -74,28 +74,29 @@ public class TestCalendar extends TestCase{
     }
 
     // TODO: summarize
-    public void testWeekProperties(){
+    public void testWeekProperties() {
 
     }
 
-    public void testDayProperties(){
+    public void testDayProperties() {
         Calendar cal = Calendar.getInstance();
         int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
 
-        if(dayOfWeek == Calendar.THURSDAY){
+        if (dayOfWeek == Calendar.THURSDAY) {
             System.out.printf("testDayProperties: thursday \n");
         }
     }
+
     /**
      * 时间增加机制：
-     * 		增加月或者年时，  首先会平移相应分量； 如果日期分量超出了范围， 则取最后一天
+     * 增加月或者年时，  首先会平移相应分量； 如果日期分量超出了范围， 则取最后一天
      */
-    public void testAdd(){
+    public void testAdd() {
         String original = null;
         String afterAdd = null;
 
         /* operation in normal range */
-        Calendar  cal = Calendar.getInstance();
+        Calendar cal = Calendar.getInstance();
         original = getString(cal);
         cal.add(Calendar.YEAR, 1);
         afterAdd = getString(cal);
@@ -145,7 +146,7 @@ public class TestCalendar extends TestCase{
         //2000.03.31 + 1月 ===> 2000.04.30
         cal = new GregorianCalendar(2000, Calendar.MARCH, 31);
         original = getString(cal);
-        cal.add(Calendar.MONTH,1);
+        cal.add(Calendar.MONTH, 1);
         afterAdd = getString(cal);
         System.out.printf("testAdd: %s + 1month = %s \n", original, afterAdd);
         System.out.println();
@@ -153,15 +154,24 @@ public class TestCalendar extends TestCase{
         //2000.04.30 + 1月 ===> 2000.05.30
         cal = new GregorianCalendar(2000, Calendar.APRIL, 30);
         original = getString(cal);
-        cal.add(Calendar.MONTH,1);
+        cal.add(Calendar.MONTH, 1);
         afterAdd = getString(cal);
         System.out.printf("testAdd: %s + 1month = %s \n", original, afterAdd);
         System.out.println();
 
+        //2000.01.03 - 5天  ===> 2000.05.30
+        cal = new GregorianCalendar(2000, Calendar.JANUARY, 3);
+        original = getString(cal);
+        cal.add(Calendar.DATE, -5);
+        afterAdd = getString(cal);
+        System.out.printf("testAdd: %s - 5day = %s \n", original, afterAdd);
+        System.out.println();
+
+
     }
 
-    private String getString(Calendar cal){
-        if(cal == null){
+    private String getString(Calendar cal) {
+        if (cal == null) {
             return null;
         }
 
