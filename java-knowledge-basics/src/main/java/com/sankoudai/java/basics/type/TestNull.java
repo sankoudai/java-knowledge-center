@@ -20,5 +20,8 @@ public class TestNull extends TestCase{
 		Object obj = null;
 		String obj2 = null;
 		Assert.assertTrue(obj == obj2);
+
+		/* 字符串和null的相等 */
+		Assert.assertFalse("string".equals(null));
 	}
 }

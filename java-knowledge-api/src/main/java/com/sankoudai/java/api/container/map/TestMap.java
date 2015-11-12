@@ -32,13 +32,16 @@ public class TestMap extends TestCase {
         System.out.println(s5.hashCode());
     }
 
-    public void testEqualOfKey() {
+    public void testKey() {
+        /* test equality of key:  new Date(0L) equals new Date(0L) */
         Map<Object, Object> map = new HashMap<>();
         map.put(new Date(0L), "a");
         map.put(new Date(0L), "b");
-
         Assert.assertEquals(map.size(), 1);
         Assert.assertEquals(map.get(new Date(0L)), "b");
+
+        /* test null key : null key is valid */
+        Assert.assertEquals(map.get(null), null);
     }
 
     public void testEmptyKeySet() {

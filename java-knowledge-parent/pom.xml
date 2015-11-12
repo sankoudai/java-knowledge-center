@@ -15,6 +15,7 @@
         <jdk.version>1.8</jdk.version>
         <junit.version>4.12</junit.version>
         <dom4j.version>1.6.1</dom4j.version>
+        <jackson.version>2.6.1</jackson.version>
     </properties>
 
     <dependencyManagement>
@@ -28,6 +29,18 @@
                 <groupId>dom4j</groupId>
                 <artifactId>dom4j</artifactId>
                 <version>${dom4j.version}</version>
+            </dependency>
+
+            <!--jackson-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

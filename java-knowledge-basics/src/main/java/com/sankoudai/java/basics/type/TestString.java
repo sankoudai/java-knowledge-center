@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 /**
@@ -138,5 +139,14 @@ public class TestString extends TestCase {
     @Test
     public void testCompareTo(){
         Assert.assertTrue(("0002001".compareTo("0002005")<0));
+    }
+
+
+    public void testTempt() throws UnsupportedEncodingException {
+        byte[] bytes = {(byte)0xF0, (byte)0x9F, (byte)0x92,(byte)0x94};
+        String s = new String(bytes, "utf-8");
+        System.out.printf("s=%s, len=%s", s, s.length());
+        int i = s.codePointAt(1);
+        System.out.println(i);
     }
 }

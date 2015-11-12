@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books> 
+  <book id="A1"> 
+    <name>Feymann's Lectures on Physics</name>  
+    <author>Feymann</author>  
+    <language>English</language>  
+    <price>69</price> 
+  </book>  
+  <book id="A2"> 
+    <name>荷马史诗</name>  
+    <author>荷马</author>  
+    <language>中文</language>  
+    <price>35</price> 
+  </book>  
+  <book id="A3"> 
+    <name>我的野蛮女友</name>  
+    <author>未知</author>  
+    <language>中文</language>  
+    <price>5</price> 
+  </book>  
+</books>
