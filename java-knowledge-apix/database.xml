@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database type="oracle">
+  <username>sankoudai</username>
+  <password>sankoudai</password>
+</database>
