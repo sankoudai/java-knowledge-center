@@ -52,14 +52,21 @@ public class TestMap extends TestCase {
         Assert.assertTrue(keys.isEmpty());
     }
 
-    public void testPutAll(){
-        Map<Object, Object> map = new HashMap<>();
+    public void testPutAll() {
 
         Map<Object, Object> anotherMap = new HashMap<>();
         anotherMap.put("name", "jim");
         anotherMap.put("age", 30);
 
+        /* putAll */
+        Map<Object, Object> map = new HashMap<>();
         map.putAll(anotherMap);
-        System.out.printf("testPutAll: map = %s", map.toString());
+        System.out.printf("testPutAll: map = %s\n", map.toString());
+
+        /* putAll的覆盖: 后添加的值会覆盖原有值 */
+        Map<Object, Object> thirdMap = new HashMap<>();
+        thirdMap.put("name", "lilei");
+        map.putAll(thirdMap);
+        Assert.assertEquals(map.get("name"), "lilei");
     }
 }
