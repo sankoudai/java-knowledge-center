@@ -1,4 +1,4 @@
-package com.sankoudai.java.api.stream.benchmark;
+package com.sankoudai.java.api.container.benchmark;
 
 import org.junit.Test;
 

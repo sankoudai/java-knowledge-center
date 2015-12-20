@@ -1,6 +1,7 @@
 package com.sankoudai.java.api.math;
 
 import junit.framework.TestCase;
+import org.junit.Assert;
 
 import java.math.BigDecimal;
 
@@ -16,6 +17,9 @@ public class TestBigDecimal extends TestCase {
         bd = new BigDecimal("3.1234");
         System.out.printf("testBuild: bigdecimal from String = %s \n", bd.toString());
         System.out.println();
+
+        bd = new BigDecimal("asdf");
+        System.out.printf("testBuild: bigdecimal from non-number String = %s \n", bd.toString());
     }
 
     public void testRound() {
@@ -47,5 +51,12 @@ public class TestBigDecimal extends TestCase {
         System.out.printf("testAccuracy-bigDecimal: 3.1234*3.1234*3.1234 = %s \n", bigDecimal);
         System.out.printf("testAccuracy-double: 3.1234*3.1234*3.1234 = %s \n", doubleValue);
         System.out.println();
+    }
+
+    public void testEqual(){
+        BigDecimal num = new BigDecimal("2.01").multiply(BigDecimal.valueOf(100));
+        BigDecimal num2 = BigDecimal.valueOf(201);
+        num = num.stripTrailingZeros();
+        Assert.assertTrue(num.equals(num2));
     }
 }
