@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alipay>
+    <is_success>T</is_success>
+    <request>
+        <param name="trade_no">2015121421001004870040606451</param>
+        <param name="_input_charset">utf-8</param>
+        <param name="service">single_trade_query</param>
+        <param name="partner">2088021348713931</param>
+    </request>
+    <response>
+        <trade>
+            <body>胖女孩服饰旗舰店2件衣服</body>
+            <buyer_email>xuliufeng2010@163.com</buyer_email>
+            <buyer_id>2088602015165875</buyer_id>
+            <discount>0.00</discount>
+            <flag_trade_locked>0</flag_trade_locked>
+            <gmt_create>2015-12-14 15:44:40</gmt_create>
+            <gmt_last_modified_time>2015-12-18 17:37:46</gmt_last_modified_time>
+            <gmt_payment>2015-12-14 15:44:41</gmt_payment>
+            <gmt_refund>2015-12-18 17:37:46.938</gmt_refund>
+            <is_total_fee_adjust>F</is_total_fee_adjust>
+            <operator_role>B</operator_role>
+            <out_trade_no>566e73b1cb417477f2762ba0</out_trade_no>
+            <payment_type>1</payment_type>
+            <price>0.10</price>
+            <quantity>1</quantity>
+            <refund_fee>0.03</refund_fee>
+            <refund_flow_type>3</refund_flow_type>
+            <refund_id>93588166</refund_id>
+            <refund_status>REFUND_SUCCESS</refund_status>
+            <seller_email>fengge_cn@fengge.cn</seller_email>
+            <seller_id>2088021348713931</seller_id>
+            <subject>大码美衣-打底长袖圆领毛衣连衣裙</subject>
+            <time_out>2016-03-14 15:44:41</time_out>
+            <time_out_type>finishFPAction</time_out_type>
+            <to_buyer_fee>0.03</to_buyer_fee>
+            <to_seller_fee>0.10</to_seller_fee>
+            <total_fee>0.10</total_fee>
+            <trade_no>2015121421001004870040606451</trade_no>
+            <trade_status>TRADE_SUCCESS</trade_status>
+            <use_coupon>F</use_coupon>
+        </trade>
+    </response>
+    <sign>Gp67MCDUCcXyukxNisqAsb7sKWg6mc9LCMkxEIwh5Hb2szHJwn4kesYm5xQN65XhUVBXuoyMdSq9O2yAUwIyZ4kCikNluMs/0rvUUqdtjcGSGY5D9MwCNINZpnXXjKVvwelBz1lEJ6CMIa4gCJIcBaK5qG+PRQYyK2++H5t/yIA=</sign>
+    <sign_type>RSA</sign_type>
+</alipay>

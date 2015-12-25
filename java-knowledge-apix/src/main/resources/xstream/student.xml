@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<com.sankoudai.java.apix.xstream.entity.Student>
+    <rowNo>1</rowNo>
+    <firstName>Mahesh</firstName>
+    <lastName>Parashar</lastName>
+    <className>1st</className>
+    <address>
+        <area>H.No. 16/3, Preet Vihar.</area>
+        <city>Delhi</city>
+        <state>Delhi</state>
+        <country>India</country>
+        <pincode>110012</pincode>
+    </address>
+</com.sankoudai.java.apix.xstream.entity.Student>
