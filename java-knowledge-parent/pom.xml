@@ -17,6 +17,8 @@
         <dom4j.version>1.6.1</dom4j.version>
         <jackson.version>2.6.1</jackson.version>
         <xstream.version>1.4.8</xstream.version>
+        <poi.version>3.12</poi.version>
+        <apache.lang3.version>3.3.2</apache.lang3.version>
     </properties>
 
     <dependencyManagement>
@@ -61,6 +63,30 @@
                 <groupId>com.thoughtworks.xstream</groupId>
                 <artifactId>xstream</artifactId>
                 <version>${xstream.version}</version>
+            </dependency>
+
+            <!--poi-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!--commons.lang-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.lang3.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
