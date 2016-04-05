@@ -5,6 +5,7 @@ import junit.framework.TestCase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * @author : sankoudai
@@ -44,6 +45,11 @@ public class TestDate extends TestCase {
 
         str = "19881016";
         fmt = new SimpleDateFormat("yyyyMMdd");
+        date = fmt.parse(str);
+        System.out.printf("testConversionWithString-from string: string=%s, fmtPattern=%s, date=%s \n", str, fmt.toPattern(), date);
+
+        str = "26/Apr/2014 09:37:55 +0800";
+        fmt = new SimpleDateFormat("dd/MMM/yyyy HH:mm:ss Z", Locale.US);
         date = fmt.parse(str);
         System.out.printf("testConversionWithString-from string: string=%s, fmtPattern=%s, date=%s \n", str, fmt.toPattern(), date);
 

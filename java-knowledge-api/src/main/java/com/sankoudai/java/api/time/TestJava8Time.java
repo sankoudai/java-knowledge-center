@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * java.time包中的类是不可变且线程安全的!
@@ -172,8 +173,15 @@ public class TestJava8Time extends TestDate {
 
     /*---- LocalDateTime ----*/
     public void testConversion() {
-        String time = "2015-11-24 11:24:00";
-        LocalDateTime dateTime = LocalDateTime.parse(time, DateTimeFormatter.ISO_LOCAL_DATE);
+        String time = "2015-11-24T11:24:00";
+        LocalDateTime dateTime = LocalDateTime.parse(time, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        System.out.println(dateTime);
+
+
+        time = "26/Apr/2014 09:37:55 +0800";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMM/yyyy HH:mm:ss Z", Locale.US);
+        dateTime = LocalDateTime.parse(time, formatter);
+        ZonedDateTime zonedDateTime = dateTime.atZone(ZoneId.of("GMT-6"));
     }
 
     /**
