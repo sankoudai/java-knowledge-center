@@ -19,6 +19,7 @@
         <xstream.version>1.4.8</xstream.version>
         <poi.version>3.12</poi.version>
         <apache.lang3.version>3.3.2</apache.lang3.version>
+        <apache.collections.verison>3.2.2</apache.collections.verison>
     </properties>
 
     <dependencyManagement>
@@ -87,6 +88,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${apache.lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${apache.collections.verison}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

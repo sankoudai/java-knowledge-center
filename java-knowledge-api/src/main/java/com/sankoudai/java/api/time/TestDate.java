@@ -67,6 +67,11 @@ public class TestDate extends TestCase {
         date = fmt.parse(str);
         System.out.printf("testConversionWithString-from string: string=%s, fmtPattern=%s, date=%s \n", str, fmt.toPattern(), date);
 
+        str = "2014-7-24 12:00:00.0123";
+        fmt = new SimpleDateFormat("yyyy-M-d HH:mm:ss.SSS");
+        date = fmt.parse(str);
+        System.out.printf("testConversionWithString-from string: string=%s, fmtPattern=%s, date=%s \n", str, fmt.toPattern(), date);
+
         /*to string*/
         date = new Date();
         fmt = new SimpleDateFormat("yyyy-M-d HH:mm:ss");
@@ -75,4 +80,11 @@ public class TestDate extends TestCase {
 
         System.out.println();
     }
+
+    public void testTmp(){
+        // 2016/05/10 19:18:29.000
+        Date date = new Date(1467888137865L);
+        System.out.println(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS").format(date));
+    }
+
 }

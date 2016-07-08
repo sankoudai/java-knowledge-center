@@ -12,6 +12,14 @@ import java.util.Arrays;
  * @version : created at 2015/8/5
  */
 public class TestString extends TestCase {
+    public void testGetBytes(){
+        //空字符串
+        String str = "";
+        byte[] bytes = str.getBytes();
+
+    }
+
+
     public void testType() {
         String str = "abc";
         Assert.assertTrue(str instanceof String);
@@ -37,7 +45,8 @@ public class TestString extends TestCase {
     }
 
     /**
-     * split(regex)
+     * split(regex): trim trailing empties
+     * split(regex, -1): keep trailing empties
      */
     public void testSplit() {
         String line = "0 1 2";
@@ -59,12 +68,15 @@ public class TestString extends TestCase {
         line = "12|";
         strs = line.split("\\|");
         System.out.println(Arrays.toString(strs));
+
+        line = "12, 3 ,4 , 5";
+        strs = line.split("[\\s]*,[\\s]*");
+        System.out.println(Arrays.toString(strs));
     }
 
     /**
      * 测试contains
      */
-    @Test
     public void testContains() {
         String parentString = "aso";
 
@@ -127,7 +139,6 @@ public class TestString extends TestCase {
     /**
      * String.format: 将多个元素按照规定的格式组合
      */
-    @Test
     public void testFormat() {
         //限定数字的位数 + 组合
         String formatedString = String.format("%02d:%02d:%02d", 1, 13, 24);
@@ -144,7 +155,6 @@ public class TestString extends TestCase {
      * 0,  如果字符串相等;
      * >0, str2较大
      */
-    @Test
     public void testCompareTo() {
         Assert.assertTrue(("0002001".compareTo("0002005") < 0));
     }
