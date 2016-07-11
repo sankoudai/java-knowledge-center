@@ -1,5 +1,6 @@
 package com.sankoudai.java.basics.type;
 
+import org.junit.Assert;
 import junit.framework.TestCase;
 
 /**
@@ -7,20 +8,23 @@ import junit.framework.TestCase;
  * @version : created at 2015/8/5
  */
 public class TestInt extends TestCase {
-    public void testValue(){
+    public void testValue() {
         int i = 10;
-        System.out.printf("int : %d \n", i);
+        Assert.assertEquals(10, i);
 
         int hexInt = 0xff;
-        System.out.printf("int: 0xff=%d \n", hexInt);
+        Assert.assertEquals(16 * 15 + 15, hexInt);
+
+        int binInt = 0b11;
+        Assert.assertEquals(2 * 1 + 1, binInt);
     }
 
-    public void testMaxValue(){
+    public void testMaxValue() {
         int maxInt = Integer.MAX_VALUE;
         System.out.printf("maxInt = %d, about 2billion \n", maxInt);
     }
 
-    public void testOverflow(){
+    public void testOverflow() {
         int maxInt = Integer.MAX_VALUE;
         System.out.printf(" maxInt + 1 = %d \n", maxInt + 1);
         System.out.println("So int set forms a ring!!");

@@ -4,7 +4,6 @@ import com.sankoudai.java.apix.xstream.entity.Address;
 import com.sankoudai.java.apix.xstream.entity.AnnotatedAddress;
 import com.sankoudai.java.apix.xstream.entity.AnnotatedStudent;
 import com.sankoudai.java.apix.xstream.entity.Student;
-import com.sun.xml.internal.bind.api.impl.NameConverter;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
 import com.thoughtworks.xstream.io.xml.StaxDriver;

@@ -66,6 +66,7 @@ public class TestStringUtils extends TestCase {
     public void testSplit() {
         String input = "0 1,2.3|4 5";
         Assert.assertEquals(ArrayUtils.toArray("0", "1", "2", "3", "4", "5"), StringUtils.split(input, " ,.|"));
+        System.out.println(Arrays.toString(StringUtils.split("0\n\r 1\r\n 2")));
     }
 
     public void testSubstring() {
