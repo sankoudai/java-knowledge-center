@@ -19,10 +19,8 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.util.Arrays;
 
-/**
- * Created by xuliufeng on 2015/12/20.
- */
-public class TestXStream extends TestCase {
+
+public class TestXstream extends TestCase {
     public void testConverter() {
         AnnotatedStudent student = exampleAnnotatedStudent();
 
@@ -139,9 +137,8 @@ public class TestXStream extends TestCase {
 
     private BufferedReader exampleReader() throws UnsupportedEncodingException {
         InputStream is = getClass().getResourceAsStream("/xstream/student.xml");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"));
 
-        return reader;
+        return new BufferedReader(new InputStreamReader(is, "utf-8"));
     }
 
     private String formatXml(String xml) {

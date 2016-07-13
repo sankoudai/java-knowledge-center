@@ -20,6 +20,7 @@
         <poi.version>3.12</poi.version>
         <apache.lang3.version>3.3.2</apache.lang3.version>
         <apache.collections.verison>3.2.2</apache.collections.verison>
+        <apache.httpclient.version>4.5.2</apache.httpclient.version>
     </properties>
 
     <dependencyManagement>
@@ -28,6 +29,12 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+            </dependency>
+            <!-- httpclient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${apache.httpclient.version}</version>
             </dependency>
 
             <!--dom4j-->

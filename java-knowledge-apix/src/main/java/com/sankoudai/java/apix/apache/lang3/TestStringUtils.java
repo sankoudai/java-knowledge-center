@@ -1,4 +1,4 @@
-package com.sankoudai.java.apix.apach.lang3;
+package com.sankoudai.java.apix.apache.lang3;
 
 import junit.framework.TestCase;
 import org.apache.commons.lang3.ArrayUtils;
@@ -7,9 +7,7 @@ import org.junit.Assert;
 
 import java.util.Arrays;
 
-/**
- * Created by xuliufeng on 2016/1/22.
- */
+
 public class TestStringUtils extends TestCase {
     private static final String BlankString = " \r\n\n\t\r";
 
