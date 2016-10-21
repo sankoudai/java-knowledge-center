@@ -66,7 +66,7 @@ public class TestString extends TestCase {
         System.out.println(Arrays.toString(strs));
 
         line = "12|";
-        strs = line.split("\\|");
+        strs = line.split("\\|", -1);
         System.out.println(Arrays.toString(strs));
 
         line = "12, 3 ,4 , 5";
