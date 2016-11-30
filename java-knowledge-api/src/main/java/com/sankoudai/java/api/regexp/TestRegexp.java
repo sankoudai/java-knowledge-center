@@ -150,14 +150,19 @@ public class TestRegexp extends TestCase {
 
 
     public void testTemp() {
-        Pattern pattern = Pattern.compile("(^(?!visit)(.+))|(^visit.log$)|(visit.log.2016-0[1-4].+)");
+        Pattern pattern = Pattern.compile("^[0-9]+\\|");
+        Pattern pattern2 = Pattern.compile("^.*appLog=(.*) HTTP.*");
+        String msg = "1589645|1473073904375|3.6.7|android|25|||native|priceOrder=0&saleVolumOrder=0&pubtimeOrder=0&maxPrice=0&minPrice=0&bCateId=||";
+        Assert.assertTrue(pattern.matcher(msg).find());
 
-        Assert.assertTrue(pattern.matcher("visit.log").find());
-        Assert.assertTrue(pattern.matcher("visit.log.2016-03-03").find());
-        Assert.assertTrue(pattern.matcher("comment.log").find());
-        Assert.assertTrue(pattern.matcher("comment.log.2016-03-03").find());
+        msg = "36.5.56.156 - - [08/Oct/2016:04:56:14 +0800] \"GET /?appLog=3729372|1475873836057|4.0.2|android|28|||native||16146||7ccf6491-d15a-409c-96a9-ce837229b321 HTTP/1.1\" 200 35 \"-\" \"-\"";
+        Assert.assertTrue(!pattern.matcher(msg).find());
 
-        Assert.assertTrue(!pattern.matcher("visit.log.2016-05-03").find());
-
+        Matcher matcher2 = pattern2.matcher(msg);
+        if(matcher2.find()) {
+            for (int i = 0; i <= matcher2.groupCount(); i++) {
+                System.out.println(matcher2.group(i));
+            }
+        }
     }
 }

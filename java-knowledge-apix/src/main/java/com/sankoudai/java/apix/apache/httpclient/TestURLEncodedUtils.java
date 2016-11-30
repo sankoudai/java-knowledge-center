@@ -3,17 +3,62 @@ package com.sankoudai.java.apix.apache.httpclient;
 import junit.framework.TestCase;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.message.BasicNameValuePair;
 
-import java.nio.charset.Charset;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
 public class TestURLEncodedUtils extends TestCase {
-    public void testParse() {
-        String queryString = "SPREADURL=ZBFRZ9&ADNETNAME=gdt&APPKEY=ddb931fe9226409591c448cffc9d6eda&click=%7B%22click_time%22:%221468394815%22,%22app_type%22:%22ios%22,%22advertiser_id%22:%221830177%22,%22appid%22:%22911330580%22,%22chn%22:%22gdt%22,%22muid%22:%228d3a6a56ecccb7269a51d1395fe71fb7%22,%22click_id%22:%223lhikv3fdyaghsjfo4yq%22%7D&CLICKTIME=1468394815000&SPREADNAME=%E5%B9%BF%E7%82%B9%E9%80%9A%E6%B5%8B%E8%AF%95";
-        List<NameValuePair> pairList = URLEncodedUtils.parse(queryString, Charset.forName("UTF-8"));
-        for (NameValuePair pair : pairList) {
+    public void testParse() throws URISyntaxException {
+        // simple query string
+        String queryString = "a=1&b=2";
+        List<NameValuePair> pairList = URLEncodedUtils.parse(queryString, StandardCharsets.UTF_8);
+        printPairs(pairList);
+
+        // querystring with duplicate parameters:
+        System.out.println("\nduplicate parameters: ");
+        queryString = "a=1&b=2&b=3";
+        pairList = URLEncodedUtils.parse(queryString, StandardCharsets.UTF_8);
+        printPairs(pairList);
+
+        // encoded querystring
+        System.out.println();
+        System.out.println("encoded querystring");
+        queryString = "a=1&click_time=%221468394815%22";
+        pairList = URLEncodedUtils.parse(queryString, StandardCharsets.UTF_8);
+        printPairs(pairList);
+
+        // url
+        System.out.println();
+        System.out.println("url: ");
+        String url = "http://baidu.com?a=1&b=2";
+        pairList = URLEncodedUtils.parse(new URI(url), StandardCharsets.UTF_8.toString());
+        printPairs(pairList);
+
+    }
+
+    public void testFormat(){
+        List<NameValuePair> pairs = examplePairs();
+        String queryString = URLEncodedUtils.format(pairs, StandardCharsets.UTF_8.toString());
+        System.out.println(queryString);
+    }
+
+    private void printPairs(Collection<NameValuePair> pairs) {
+        for (NameValuePair pair : pairs) {
             System.out.println(pair.getName() + "=" + pair.getValue());
         }
+    }
+
+    private List<NameValuePair> examplePairs(){
+        List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+        pairs.add(new BasicNameValuePair("a", "1"));
+        pairs.add(new BasicNameValuePair("b", "1"));
+        pairs.add(new BasicNameValuePair("b", "2"));
+        return pairs;
     }
 }
