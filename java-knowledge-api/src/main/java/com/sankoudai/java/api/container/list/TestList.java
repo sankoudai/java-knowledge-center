@@ -74,4 +74,11 @@ public class TestList extends TestCase {
 
         System.out.println(str);
     }
+
+    public void testEmptyList() {
+        List<Integer> ints = Collections.EMPTY_LIST;
+        for (Integer i : ints) {
+            System.out.println(i);
+        }
+    }
 }
