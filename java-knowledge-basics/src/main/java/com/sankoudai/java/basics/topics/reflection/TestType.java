@@ -8,6 +8,7 @@ import org.junit.Assert;
  * @version : created at 2016/2/14
  */
 public class TestType extends TestCase {
+
     /**
      * 判断值的类型
      */
@@ -15,8 +16,16 @@ public class TestType extends TestCase {
         Integer i = 0;
         Assert.assertTrue(i instanceof Integer);
 
-        Class cls = Integer.class;
+        Class<Integer> cls = Integer.class;
         Assert.assertTrue(cls.isInstance(i));
+    }
+
+    public void testClassFor() {
+        try {
+            Class cls =  Class.forName("com.sankoudai.java.basics.topics.reflection.RClass");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -3,9 +3,8 @@ package com.sankoudai.java.api.container.list;
 import junit.framework.TestCase;
 import org.junit.Assert;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.function.Predicate;
 
 /**
  * @author : sankoudai
@@ -65,6 +64,13 @@ public class TestList extends TestCase {
         System.out.printf("test-remove: after remove list=%s \n", list.toString());
     }
 
+    public void testRemoveIf() {
+        List<Integer> list = Arrays.asList(0, 1, 2, 3);
+
+        Predicate<Integer> predicate = integer -> integer>10;
+        list.removeIf(predicate);
+    }
+
     public void testMap(){
         List<Integer> list = new ArrayList<>();
         Collections.addAll(list, 1, 2, 3);
@@ -80,5 +86,28 @@ public class TestList extends TestCase {
         for (Integer i : ints) {
             System.out.println(i);
         }
+    }
+
+    public void testShuffle() {
+        List<Integer> list = new ArrayList<>();
+        Collections.addAll(list, 1, 2, 3, 4, 5);
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println(list);
+            Collections.shuffle(list);
+        }
+    }
+
+    /**
+     * subList 影响整体list
+     */
+    public void testSublist() {
+        List<Integer> list = new ArrayList<>();
+        Collections.addAll(list, 1, 2, 3, 4, 5);
+
+        List<Integer>  sublist = list.subList(0, 3);
+        sublist.sort((arg0, arg1) -> arg1 - arg0);
+
+        System.out.println(list.toString());
     }
 }

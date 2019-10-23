@@ -72,6 +72,10 @@ public class TestString extends TestCase {
         line = "12, 3 ,4 , 5";
         strs = line.split("[\\s]*,[\\s]*");
         System.out.println(Arrays.toString(strs));
+
+        line = "";
+        strs = line.split(",");
+        Assert.assertTrue(strs.length==1);
     }
 
     /**
@@ -143,6 +147,11 @@ public class TestString extends TestCase {
         //限定数字的位数 + 组合
         String formatedString = String.format("%02d:%02d:%02d", 1, 13, 24);
         Assert.assertEquals("01:13:24", formatedString);
+
+        // %s - 数字
+        formatedString = String.format("%s", 24.12);
+//        Assert.assertEquals("01:13:24", formatedString);
+        System.out.println(formatedString);
 
         //format null
         String nullString = String.format("the value is null: %s", null);

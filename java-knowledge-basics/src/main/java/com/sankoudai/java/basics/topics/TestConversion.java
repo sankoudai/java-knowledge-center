@@ -3,6 +3,9 @@ package com.sankoudai.java.basics.topics;
 import junit.framework.TestCase;
 import org.junit.Assert;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author : sankoudai
  * @version : created at 2015/8/7
@@ -36,5 +39,9 @@ public class TestConversion extends TestCase{
         }catch (Exception e){
             System.out.println("You ought to be here");
         }
+
+        HashMap<String, Object> hm = new HashMap<>();
+        Object obj = hm;
+        Map<String, Object> m = (Map<String, Object>) obj;
     }
 }

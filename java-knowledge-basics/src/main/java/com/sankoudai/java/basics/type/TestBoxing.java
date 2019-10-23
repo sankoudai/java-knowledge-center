@@ -7,7 +7,7 @@ import org.junit.Assert;
  * @author : sankoudai
  * @version : created at 2015/8/11
  */
-public class TestWrapper extends TestCase {
+public class TestBoxing extends TestCase {
     public void testWrap() {
         //将基本类型包装为对象
         Integer i1 = new Integer(1);

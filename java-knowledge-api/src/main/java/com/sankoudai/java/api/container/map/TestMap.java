@@ -69,4 +69,12 @@ public class TestMap extends TestCase {
         map.putAll(thirdMap);
         Assert.assertEquals(map.get("name"), "lilei");
     }
+
+    public void testToString() {
+        Map<Object, Object> anotherMap = new HashMap<>();
+        anotherMap.put("name", "jim");
+        anotherMap.put("age", 30);
+
+        System.out.println(anotherMap);
+    }
 }

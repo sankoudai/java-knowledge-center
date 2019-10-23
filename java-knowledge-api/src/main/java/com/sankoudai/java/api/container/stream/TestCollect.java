@@ -4,6 +4,7 @@ import com.sankoudai.java.api.container.stream.bean.ExampleObj;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -24,5 +25,12 @@ public class TestCollect extends TestCase{
         obj.setId(1);
         obj.setName("name");
         return obj;
+    }
+
+    public void testMap() {
+        Map<Integer, Long> s = new HashMap<>();
+        s.put(1, 3L);
+        s.put(3, 4L);
+        s.entrySet().stream().map(a->a.getValue()).sorted().collect(Collectors.toList());
     }
 }

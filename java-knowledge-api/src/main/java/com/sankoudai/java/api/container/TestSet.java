@@ -17,5 +17,9 @@ public class TestSet extends TestCase {
         set.add(2L);
         set.add(null);
         assert (set.contains(1L));
+
+        set.add(1234567033L);
+        long l = 1234567033L;
+        assert set.contains(l);
     }
 }

@@ -29,4 +29,10 @@ public class TestInt extends TestCase {
         System.out.printf(" maxInt + 1 = %d \n", maxInt + 1);
         System.out.println("So int set forms a ring!!");
     }
+
+    public void testDivide() {
+        Assert.assertEquals(10%3, 1);
+        Assert.assertEquals(10/3, 3);
+
+    }
 }

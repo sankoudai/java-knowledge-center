@@ -59,6 +59,12 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
+        <!--gson-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+
         <!--apache lang3-->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -74,7 +80,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.6</version>
         </dependency>
+
+        <!--guava-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

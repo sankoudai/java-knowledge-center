@@ -11,6 +11,11 @@ import java.util.Arrays;
 public class TestStringUtils extends TestCase {
     private static final String BlankString = " \r\n\n\t\r";
 
+    public void testContent() {
+        Assert.assertTrue(StringUtils.isNumeric("01"));
+        Assert.assertTrue(!StringUtils.isNumeric("0.1"));
+    }
+
     public void testBlank() {
         Assert.assertTrue(StringUtils.isBlank(BlankString));
         Assert.assertTrue(StringUtils.isBlank(null));
