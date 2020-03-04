@@ -15,7 +15,7 @@
         <jdk.version>1.8</jdk.version>
         <junit.version>4.12</junit.version>
         <dom4j.version>1.6.1</dom4j.version>
-        <jackson.version>2.6.1</jackson.version>
+        <jackson.version>2.10.3</jackson.version>
         <gson.version>2.6.1</gson.version>
         <xstream.version>1.4.8</xstream.version>
         <poi.version>3.12</poi.version>
