@@ -21,7 +21,7 @@
         <poi.version>3.12</poi.version>
         <apache.lang3.version>3.3.2</apache.lang3.version>
         <apache.collections.verison>3.2.2</apache.collections.verison>
-        <apache.httpclient.version>4.5.2</apache.httpclient.version>
+        <apache.httpclient.version>4.5.13</apache.httpclient.version>
         <lombok.version>1.16.10</lombok.version>
         <guava.version>25.0-jre</guava.version>
     </properties>
