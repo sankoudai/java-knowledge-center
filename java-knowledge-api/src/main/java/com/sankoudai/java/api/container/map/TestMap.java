@@ -74,6 +74,7 @@ public class TestMap extends TestCase {
         Map<Object, Object> anotherMap = new HashMap<>();
         anotherMap.put("name", "jim");
         anotherMap.put("age", 30);
+        anotherMap.put("a", null);
 
         System.out.println(anotherMap);
     }

@@ -45,6 +45,9 @@ public class TestList extends TestCase {
 
         list.add(2, 2); // add(pos, elem)
         System.out.printf("list=%s", list.toString());
+
+        list.add(4, 4); // add(pos, elem)
+        System.out.printf("list=%s", list.toString());
     }
 
     public void testSet() {

@@ -54,6 +54,11 @@ public class TestCollections extends TestCase {
         Collections.shuffle(list);
         System.out.printf("testShuffle: after shuffle list = %s \n", list.toString());
         System.out.println();
+
+        list = new ArrayList<>();
+        Collections.addAll(list, 0, 1, 2, 3, 4);
+        Collections.shuffle(list.subList(0, 2));
+        System.out.println("shuffle sublist: " + list);
     }
 
     /**
