@@ -44,14 +44,6 @@ public class TestMap extends TestCase {
         Assert.assertEquals(map.get(null), null);
     }
 
-    public void testEmptyKeySet() {
-        Map<Object, Object> map = new HashMap<>();
-        Set<Object> keys = map.keySet();
-
-        Assert.assertTrue(keys != null);
-        Assert.assertTrue(keys.isEmpty());
-    }
-
     public void testPutAll() {
 
         Map<Object, Object> anotherMap = new HashMap<>();
@@ -68,6 +60,28 @@ public class TestMap extends TestCase {
         thirdMap.put("name", "lilei");
         map.putAll(thirdMap);
         Assert.assertEquals(map.get("name"), "lilei");
+    }
+
+    public void testCompute() {
+        //创建一个 HashMap
+        HashMap<String, Double> prices = new HashMap<>();
+        prices.put("Shoes", 100.);
+
+        //修改已有取值
+        prices.compute("Shoes", (key, value) ->  value * 0.90);
+        assertEquals(prices.get("Shoes"), 90.0);
+
+        //添加新值
+        prices.compute("Shirt", (key, value) ->  20.0);
+        assertEquals(prices.get("Shirt"), 20.0);
+    }
+
+    public void testEmptyKeySet() {
+        Map<Object, Object> map = new HashMap<>();
+        Set<Object> keys = map.keySet();
+
+        Assert.assertTrue(keys != null);
+        Assert.assertTrue(keys.isEmpty());
     }
 
     public void testToString() {

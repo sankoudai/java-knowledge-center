@@ -11,6 +11,8 @@ import java.util.Arrays;
 public class TestParameter extends TestCase {
     public void testVarargs(){
         varargsMethod("jim", "Lilei");
+
+        varargsMethod(null, "hi");
     }
 
     private void varargsMethod(Object ... params){

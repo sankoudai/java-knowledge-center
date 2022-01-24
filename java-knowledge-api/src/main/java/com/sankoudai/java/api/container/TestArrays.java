@@ -4,12 +4,21 @@ import org.junit.Assert;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author : sankoudai
  * @version : created at 2015/8/8
  */
 public class TestArrays extends TestCase {
+    public void testAsList() {
+        String[] keys = {"a", "b"};
+        List<String> keyList = Arrays.asList(keys);
+
+        assertEquals(keyList.get(0), "a");
+        assertEquals(keyList.get(1), "b");
+    }
+
     public void testFill() {
         int[] ints = new int[5];
         Arrays.fill(ints, 1);

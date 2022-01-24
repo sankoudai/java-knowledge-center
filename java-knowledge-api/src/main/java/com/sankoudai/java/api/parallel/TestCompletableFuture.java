@@ -25,13 +25,10 @@ public class TestCompletableFuture {
         return CompletableFuture.supplyAsync(task, executor);
     }
 
-    public Map<String, String> test1() {
-        return new HashMap<>();
-    }
     public void testSupplier() {
         CompletableFuture<Map<String, String>> a = submitTask(()->{
             int i =1;
-            return test1();
+            return new HashMap<>();
         });
     }
 }
