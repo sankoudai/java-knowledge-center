@@ -2,6 +2,7 @@ package com.sankoudai.java.api.container.map;
 
 import junit.framework.TestCase;
 import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -13,6 +14,9 @@ import java.util.Set;
  * @version : created at 2015/8/11
  */
 public class TestMap extends TestCase {
+    @Test
+    public void cornerCaseTest() {
+    }
 
     public void testHashCode() {
         String s1 = new String("ABC");
@@ -74,6 +78,7 @@ public class TestMap extends TestCase {
         //添加新值
         prices.compute("Shirt", (key, value) ->  20.0);
         assertEquals(prices.get("Shirt"), 20.0);
+
     }
 
     public void testEmptyKeySet() {

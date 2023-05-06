@@ -76,6 +76,14 @@ public class TestString extends TestCase {
         line = "";
         strs = line.split(",");
         Assert.assertTrue(strs.length==1);
+
+        line= "#";
+        strs = line.split("#");
+        Assert.assertTrue(strs.length==0);
+
+        line= "##";
+        strs = line.split("#");
+        Assert.assertTrue(strs.length==0);
     }
 
     /**
