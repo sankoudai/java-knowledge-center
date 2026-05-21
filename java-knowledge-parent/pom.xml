@@ -22,7 +22,7 @@
         <apache.lang3.version>3.3.2</apache.lang3.version>
         <apache.collections.verison>3.2.2</apache.collections.verison>
         <apache.httpclient.version>4.5.2</apache.httpclient.version>
-        <lombok.version>1.16.10</lombok.version>
+        <lombok.version>1.18.46</lombok.version>
         <guava.version>25.0-jre</guava.version>
         <powermock.version>2.0.0-RC.3</powermock.version>
     </properties>
@@ -150,11 +150,18 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.3</version>
+                    <version>3.13.0</version>
                     <configuration>
                         <source>${jdk.version}</source>
                         <target>${jdk.version}</target>
                         <showWarnings>true</showWarnings>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
 
